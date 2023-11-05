@@ -1,0 +1,846 @@
+/* reviews modal stylings start here */
+.modal {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background: #000000cc;
+    z-index: 10;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.modal::-webkit-scrollbar,
+.img-modal::-webkit-scrollbar {
+    appearance: none;
+    background: black;
+    width: 6px;
+}
+.modal::-webkit-scrollbar-thumb,
+.img-modal::-webkit-scrollbar-thumb {
+    appearance: none;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #cc01aa, #01d3c1);
+    width: 10px;
+    height: 10px;
+}
+.modal::-webkit-scrollbar-corner,
+.img-modal::-webkit-scrollbar-corner {
+    appearance: none;
+    background: #000;
+}
+.img-modal {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background: #000000cc;
+    z-index: 20;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.img-modal .fa-window-close {
+    position: fixed;
+    color: white;
+    font-size: 2em;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.fullscreen {
+    width: calc(100% - 20px);
+    margin: 50px 10px;
+    border-radius: 5px;
+}
+.modal .review-card-details :is(#details-cont) {
+    padding: 10px;
+    width: fit-content;
+}
+.modal .review-card-details :is(.title)::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+    margin-bottom: 10px;
+}
+.modal .fa-window-close {
+    position: fixed;
+    color: white;
+    font-size: 2em;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.modal .review-card-details {
+    display: block;
+    width: 800px;
+    min-width: 300px;
+    max-width: 800px;
+    min-height: 60vh;
+    flex-basis: 800px;
+    flex-shrink: 1;
+    margin: 100px 10px 50px;
+    background: rgb(214, 214, 214);
+    border-radius: 10px;
+}
+.modal .review-card-details svg {
+    margin-top: 100px;
+    width: 100%;
+    height: 100px;
+}
+.modal .review-card-details svg circle.spinner-2 {
+    margin-left: 50px;
+    cx: 50%;
+    cy: 40px;
+    r: 20px;
+    stroke: url(#linear-2);
+    stroke-width: 4;
+    fill: transparent;
+    stroke-dasharray: 62.85;
+    stroke-dashoffset: 1px 0;
+    stroke-linecap: round;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+}
+.modal .review-card-details #game-info{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgb(214, 214, 214);
+}
+.modal .review-card-details img {
+    width: 100%;
+    border-radius: 10px;
+}
+.modal .review-card-details #details-cont {
+    width: 100%;
+    min-height: 60vh;
+    border-radius: 10px;
+    background: rgb(214, 214, 214);
+}
+.modal .review-card-details #details-cont .rating-box {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 20px;
+}
+.modal .review-card-details #details-cont .rating-box .score {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-right: 20px;
+}
+.modal .review-card-details #details-cont .rating-box .score h3 {
+    margin-top: 20px;
+}
+.modal .review-card-details #details-cont .rating-box .score p {
+    font-size: 3em;
+}
+.modal .review-card-details #details-cont .rating-box .score span.outer-stars {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0;
+}
+.modal .review-card-details #details-cont .rating-box .score span.outer-stars::before {
+    content: "\2606 \2606 \2606 \2606 \2606";
+    color: hsl(43, 74%, 50%);
+    font-weight: 100;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.modal .review-card-details #details-cont .rating-box .score span.outer-stars span.inner-stars {
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.modal .review-card-details #details-cont .rating-box .score span.outer-stars span.inner-stars::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: hsl(43, 74%, 50%);
+    font-weight: 100;
+    height: 100%;
+    width: 100px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-wrap: nowrap;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.modal .review-card-details #details-cont .rating-box .bars {
+    margin-top: 40px;
+    flex: 1;
+}
+.modal .review-card-details #details-cont .rating-box .bars p.rating-count {
+    font-weight: bolder;
+    padding-right: 10px;
+    text-align: right;
+}
+.modal .review-card-details #details-cont .rating-box .bars p span {
+    background: var(--background-color);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.modal .review-card-details #details-cont .rating-box .bars .bar {
+    height: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.modal .review-card-details #details-cont .rating-box .bars .bar .inner-bar {
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    background: var(--background-color);
+}
+.modal .review-card-details #details-cont .rating-box .bars .bar p {
+    line-height: 16px;
+    margin-left: 5px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    font-size: 0.8em;
+    font-weight: bolder;
+    position: relative;
+    font-weight: bolder;
+    z-index: 1;
+}
+.modal .review-card-details #details-cont .game-description {
+    margin-top: 50px;
+}
+.modal .review-card-details #details-cont .game-description h3 {
+    margin-bottom: 10px;
+    width: fit-content;
+}
+.modal .review-card-details #details-cont .game-description h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+    margin-bottom: 10px;
+}
+.modal .review-card-details #details-cont .game-description img {
+    margin-bottom: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.modal .review-card-details #details-cont .game-description p::first-letter {
+    font-size: 1.6em;
+    background: var(--background-color);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.modal .review-card-details #details-cont .game-description p {
+    line-height: 1.4em;
+    font-size: 1.1em;
+}
+.modal .review-card-details #details-cont .game-screenshots {
+    margin-top: 10px;
+}
+.modal .review-card-details #details-cont .game-screenshots h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    width: fit-content;
+}
+.modal .review-card-details #details-cont .game-screenshots h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+    margin-bottom: 10px;
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots img {
+    height: 90%;
+    margin: 0 10px 0 0;
+    cursor: zoom-in;
+    transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots img:hover {
+    transform: scale(1.05);
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots::-webkit-scrollbar{
+    appearance: none;
+    background: rgb(214, 214, 214);
+    width: 6px;
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots::-webkit-scrollbar-thumb {
+    appearance: none;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #cc01aa, #01d3c1);
+    width: 6px;
+    height: 6px;
+}
+.modal .review-card-details #details-cont .game-screenshots .screenshots::-webkit-scrollbar-corner {
+    appearance: none;
+    background: rgb(214, 214, 214);
+}
+.modal .review-card-details #details-cont .more-details {
+    margin-top: 20px;
+}
+.modal .review-card-details #details-cont .more-details h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    position: relative;
+    width: fit-content;
+}
+.modal .review-card-details #details-cont .more-details h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+    margin-bottom: 10px;
+}
+.modal .review-card-details #details-cont .more-details .details {
+    width: 100%;
+}
+.modal .review-card-details #details-cont .more-details .details p {
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+.modal .review-card-details #details-cont .more-details .details p span {
+    font-weight: lighter;
+}
+.modal .review-card-details #details-cont .more-details .details p a {
+    font-weight: lighter;
+    color: transparent;
+    background: var(--background-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.modal .review-card-details #details-cont .more-details .details p a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.8);
+    text-decoration-thickness: 2px;
+}
+.wedge {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+}
+/* reviews modal styling ends here */
+
+.reviews-cont {
+    width: 100%;
+    padding: 10px 20px 20px;
+    min-height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.h-r {
+    display: block;
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+.h-r::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+}
+.highest-rated {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px 0 ;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px #0000004d;
+}
+#highest-rated svg {
+    width: 100%;
+    height: 100px;
+}
+#highest-rated svg circle.spinner-1 {
+    margin-left: 50px;
+    cx: 50%;
+    cy: 40px;
+    r: 20px;
+    stroke: url(#linear);
+    stroke-width: 4;
+    fill: transparent;
+    stroke-dasharray: 62.85;
+    stroke-dashoffset: 1px 0;
+    stroke-linecap: round;
+    animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+}
+.legend {
+    margin-bottom: 10px;
+}
+.legend-title {
+    width: fit-content;
+}
+.legend-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+}
+.legend-icons-box {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.legend-icons-box li {
+    list-style-type: none;
+    padding: 10px 30px 10px 0;
+    color: #00000080;
+    font-size: 1.2em;
+}
+.legend-icons-box li i {
+    color: #00000080;
+}
+.fa-pc {
+    background: url(https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-pc-tower-devices-flatart-icons-outline-flatarticons.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.6);
+    -webkit-filter: opacity(0.6);
+    width: 30px;
+    height: 30px;
+    vertical-align: -8px;
+}
+.desktop-pc {
+    background: url(https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-pc-tower-devices-flatart-icons-outline-flatarticons.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    vertical-align: -8px;
+    filter: brightness(0) contrast(1);
+}
+.fa-nintendo {
+    background: url(https://img.icons8.com/ios-filled/30/ffffff/nintendo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(0.502);
+    -webkit-filter: invert(0.502);
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+}
+.fa-apple-macintosh {
+    background: url(https://img.icons8.com/nolan/64/mac-logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(0.502);
+    -webkit-filter: invert(0.502);
+    width: 30px;
+    height: 30px;
+    vertical-align: -8px;
+}
+.fa-sega {
+    background: url(https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/50/000000/external-sega-a-japanese-multinational-video-game-developer-and-publisher-company-logo-shadow-tal-revivo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(0.502);
+    -webkit-filter: invert(0.502);
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+}
+.fa-atari {
+    background: url(https://img.icons8.com/color/48/000000/atari-2600.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1) opacity(0.7);
+    -webkit-filter: grayscale(1) opacity(0.7);
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.fa-3do {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/3DO_Logo.svg/210px-3DO_Logo.svg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1) opacity(0.7);
+    -webkit-filter: grayscale(1) opacity(0.7);
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+    margin-right: -6px;
+}
+.fa-commodore-amiga {
+    background: url(https://img.icons8.com/color/48/000000/commodore-amiga.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1) opacity(0.8);
+    -webkit-filter: grayscale(1) opacity(0.8);
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+}
+.fa-neo-geo {
+    background: url(https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Neo_Geo_logo.svg/220px-Neo_Geo_logo.svg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(1) opacity(0.5);
+    -webkit-filter: grayscale(1) opacity(0.5);
+    width: 20px;
+    height: 20px;
+    vertical-align: -4px;
+}
+.nb {
+    width: fit-content;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    display: flex;
+    position: relative;
+}
+.nb::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+}
+.nb span {
+    display: inline-block;
+}
+.nb span:nth-child(1) {
+    background: var(--background-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+.nb span:nth-child(2) {
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+#pages {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 1.4em;
+    height: 40px;
+    padding-right: 0;
+}
+.pages {
+    font-weight: bolder;
+    padding: 5px 10px;
+    box-shadow: 0 6px 20px #0000004d;
+    border-radius: 10px;
+}
+.review-count {
+    background: var(--background-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.6em;
+}
+.current-page {
+    background: linear-gradient(315deg, #01d3c1, #cc01aa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.6em;
+}
+.num-of-pages {
+    background: var(--background-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.6em;
+}
+
+.review-card {
+    min-width: 260px;
+    max-width: 320px;
+    position: relative;
+    height: 420px;
+    border-radius: 10px;
+    margin: 20px 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px #0000004d;
+    position: relative;
+    transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+}
+.review-card:hover {
+    transform: translateY(-15px); 
+    box-shadow: 0 10px 28px #00000069;
+}
+.review-card:hover::before {
+    content: "";
+    width: 120%;
+    height: 120%;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: -1;
+    background: var(--background-color);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+.review-card .mc-box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+    background: url(../metacritic-logo.png), linear-gradient(#ffffff40, #ffffff40);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: 80px, 100px;
+    background-repeat: no-repeat;
+    background-position: 10px 10px, 0 0;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.review-card .mc-score {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-color);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bolder;
+    padding: 5px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.review-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+.review-card h3 {
+    font-size: 1.2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 5px 5px 5px 5px;
+    width: auto;
+}
+.review-card h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: var(--background-color);
+    margin-top: 4px;
+    border-radius: 6px 6px 3px 3px;
+}
+.rating span,
+.released span,
+.platforms span {
+    display: inline-block;
+    font-weight: bolder;
+    margin: 5px 0 5px 5px;
+}
+.rating span.rating-details {
+    display: inline-block;
+    font-weight: lighter;
+    margin: 5px 0 5px 0px;
+}
+.rating span.outer-stars {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    margin: 0;
+}
+.rating span.outer-stars::before {
+    content: "\2606 \2606 \2606 \2606 \2606";
+    color: hsl(43, 74%, 50%);
+    font-weight: 100;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.rating span.outer-stars span.inner-stars {
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.rating span.inner-stars::before {
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: hsl(43, 74%, 50%);
+    font-weight: 100;
+    height: 100%;
+    width: 100px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-wrap: nowrap;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.platform-icons {
+    color: #000000cc;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 20px;
+}
+.nintendo-icon {
+    background: url(https://img.icons8.com/ios-filled/30/ffffff/nintendo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: invert(1) opacity(0.8);
+    -webkit-filter: invert(1) opacity(0.8);
+    width: 20px;
+    height: 20px;
+    vertical-align: -4px;
+}
+.cta-btns {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.cta-btn.disabled::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-color: #fdfdfd7e;
+    cursor: not-allowed;
+}
+
+#prev-revs.cta-btn.disabled:hover,
+#next-revs.cta-btn.disabled:hover {
+    background: black;
+}
+#prev-revs, 
+#next-revs {
+    width: fit-content;
+    padding: 5px 20px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 30px 0;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: relative;
+}
+#prev-revs:hover, 
+#next-revs:hover {
+    background: var(--background-color);
+}
+.p-alert {
+    font-size: 2em;
+    font-weight: bolder;
+    margin-top: 50px;
+    padding: 10px 10px;
+    text-align: center;
+}
+.p-image {
+    width: 300px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* for screens less than 400px */
+@media only screen and (max-width: 400px) {
+    #pages {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    /* For screens less than 325px */
+    .highest-rated {
+        box-shadow: none;
+    }
+}

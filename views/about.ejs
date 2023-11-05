@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+<div class="container">
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div id="menu-btn-icon">
+        <i class="fas fa-bars"></i>
+        <span class="menu-btn-text">Menu</span>
+    </div>
+    <div class="about-cont">
+        <section class="about-hero">
+        <h1>GameRange</h1>
+        <p>...for everything gaming.</p>
+        </section>
+    </div>
+    <section class="about-body">
+        <p>GameRange is my personal project designed by a gamer for gamers in hopes to unify gamers against console wars. Just as our slogan suggests, this website was designed to supply all necessary information to gamers across all platforms.</p>
+        <br>
+        <p>Personally, this project was developed to test my knowledge on NodeJS and Express.
+            <br>
+            <br>
+            <h3>Tools used to develop this project.</h3>
+            <ul class="tools">
+                <li>
+                    <i class="fab fa-js-square"></i>
+                    <p>Vanilla JavaScript</p>
+                </li>
+                <li>
+                    <i class="fab fa-node"></i>
+                    <p>NodeJS</p>
+                </li>
+                <li>
+                    <span class="iconify" data-icon="simple-icons:express" data-width="100" data-height="100"></span>
+                    <p>Express</p>
+                </li>
+                <li>
+                    <span class="iconify" data-icon="simple-icons:mongodb" data-width="100" data-height="100"></span>
+                    <p>MongoDB</p>
+                </li>
+                <li>
+                    <i class="mongoose">mongoose</i>
+                     <p>Mongoose</p>
+                    </li>
+                <li>
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS</p>
+                </li>
+                <li>
+                    <span class="iconify" data-icon="file-icons:ejs" data-width="100" data-height="100"></span> 
+                     <p>EJS</p>
+                </li>
+            </ul>
+            <h3>Resources and materials.</h3>
+            <ul class="resources">
+                <li>
+                    <img src="https://img.icons8.com/ios-filled/80/000000/icons8-new-logo.png"/>
+                    <p>Icons 8</p>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/windows/80/000000/font-awesome-flag.png"/>
+                    <p>Font Awesome</p>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/ios-filled/80/000000/google-logo.png"/>
+                    <p>Google Fonts</p>
+                </li>
+                <li>
+                    <h1 class="undraw">unDraw</h1>
+                    <p>unDraw</p>
+                </li>
+                <li>
+                    <h1 class="rawg">RAWG</h1>
+                    <p>RAWG API</p>
+                </li>
+                <li>
+                    <img id="giant-bomb" src="https://logos-download.com/wp-content/uploads/2021/02/Giant_Bomb_Logo.png" alt="giant-bomb-logo">
+                    <p>Giant Bomb API</p>
+                </li>
+            </ul>
+        </p>
+        <p class="thanks">Thanks to the creators of these tools, resources and materials because this project wouldn't have been possible.</p>
+    </section>
+    
+</div>
+
+<%- include('./partials/footer.ejs') %>
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script>
+    const aboutHero = document.querySelector(".about-cont");
+    const aboutLogo = document.querySelector(".about-hero");
+    
+    //items
+    const logoName = document.querySelector(".about-hero h1");
+    const logoSlogan = document.querySelector(".about-hero p");
+    
+    aboutHero.addEventListener("mousemove", (e) => {
+        let xAxis = ((window.innerWidth / 2) - e.pageX) / 15;
+        let yAxis = ((window.innerHeight / 2) - e.pageY) / 5;
+
+        aboutLogo.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
+    })
+
+    aboutHero.addEventListener("mouseenter", (e) => {
+        aboutLogo.style.transition = "none";
+        aboutLogo.style.transition = "all 500ms ease-out";
+        logoName.style.transform = "translateZ(10px)";
+        logoSlogan.style.transform = " translateY(10px) translateZ(5px)";
+    })
+
+    aboutHero.addEventListener("mouseleave", (e) => {
+        aboutLogo.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        aboutLogo.style.transition = "all 500ms ease-out";
+        logoName.style.transform = "translateZ(0)";
+        logoSlogan.style.transform = " translateY(0) translateZ(0)";
+    })
+    aboutLogo.addEventListener("transitionend", () => {
+        aboutLogo.style.transition = "none";
+    })
+</script>
+</body>
+</html>
